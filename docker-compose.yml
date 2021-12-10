@@ -47,7 +47,14 @@ services:
         max-file: "10"
     networks:
       - app-network
-
+  phpmyadmin:
+      image: bitnami/phpmyadmin:5.0.2-debian-10-r72
+      ports:
+        - 8080:80
+        - 8443:443
+      environment:
+          DATABASE_HOST: db
+      restart: always
 networks:
   app-network:
     driver: bridge
