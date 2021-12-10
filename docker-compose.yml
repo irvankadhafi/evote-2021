@@ -48,12 +48,15 @@ services:
     networks:
       - app-network
   phpmyadmin:
-      image: bitnami/phpmyadmin:5.0.2-debian-10-r72
+      image: phpmyadmin/phpmyadmin:latest
       ports:
         - 8080:80
-        - 8443:443
+      depends_on:
+      - db
       environment:
-          DATABASE_HOST: db
+        PMA_HOST: db
+        PMA_USER: kdhf
+        PMA_PASSWORD: irvan456
       restart: always
 networks:
   app-network:
