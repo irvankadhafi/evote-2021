@@ -21,8 +21,8 @@
           </div>
         </div>
         <div class="px-4 pt-12 pb-4  flex items-center text-center leading-none text-gray-800">
-          <button class="btn-green m-auto" @click="toggleModalVisiMisi(data.id)" v-if="data.id===1">Visi & Misi</button>
-          <inertia-link class="btn-indigo float-right m-auto" as="button" :href="route('cv.kandidat',data.id)" v-if="data.id===1">Dokumen CV</inertia-link>
+          <button class="btn-green m-auto" @click="toggleModalVisiMisi(data.id)" :disabled="data.id === 2">Visi & Misi</button>
+          <inertia-link class="btn-indigo float-right m-auto" as="button" :href="route('cv.kandidat',data.id)" :disabled="data.id === 2">Dokumen CV</inertia-link>
         </div>
       </div>
     </div>
