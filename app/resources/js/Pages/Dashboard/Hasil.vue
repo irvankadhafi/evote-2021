@@ -179,7 +179,7 @@
     <div class="flex flex-wrap mt-6 mb-6">
       <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
         <p class="text-xl pb-3 flex items-center">
-          <i class="fas fa-poll mr-3" /> Hasil Voting Angkatan 2020
+          <i class="fas fa-poll mr-3" /> Hasil Voting Angkatan 2021
         </p>
         <div class="p-6 bg-white rounded-lg shadow-xs">
           <bar :label="angkatan1.label" :chart-data="angkatan1.jumlah" style="height: 300px;" />

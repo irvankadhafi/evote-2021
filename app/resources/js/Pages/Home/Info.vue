@@ -3,13 +3,13 @@
     <header class="items-center justify-between relative">
       <inertia-link as="button" class="btn-red right-0 md:text-center text-white rounded-full absolute" :href="route('voting.logout')">Log Out</inertia-link>
       <img src="/img/hmjtk-logo.png" class="w-32 m-auto">
-      <h3 class="text-center text-4xl text-gray-900 font-medium leading-8">PEMIRA HMJTK POLBAN 2020</h3>
+      <h3 class="text-center text-4xl text-gray-900 font-medium leading-8">PEMIRA HMJTK POLBAN 2021</h3>
       <div class="text-center text-gray-600 text-xs font-semibold pt-2">
         <p>Pemilihan Ketua HMJTK POLBAN</p>
       </div>
     </header>
     <hr class="mb-6 mt-6 border-t">
-    <h2 class="text-center text-2xl text-gray-900 font-medium leading-8 pb-5">Selamat datang di PEMIRA HMJTK POLBAN 2020</h2>
+    <h2 class="text-center text-2xl text-gray-900 font-medium leading-8 pb-5">Selamat datang di PEMIRA HMJTK POLBAN 2021</h2>
     <div class="md:w-1/3 m-auto mb-3">
       <div class="bg-gray-50 shadow-md rounded-lg py-3 hover:bg-gray-100 transition delay-75 duration-300 ease-in-out">
         <div class="p-2">

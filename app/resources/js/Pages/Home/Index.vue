@@ -28,7 +28,7 @@
         </div>
         <!--Footer-->
         <div class="w-full  pb-6 text-sm text-center md:text-left fade-in">
-          <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; HMJTK 2020</a>
+          <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; HMJTK 2021</a>
         </div>
       </div>
       <!--Login Modal-->

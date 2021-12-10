@@ -46,11 +46,16 @@ class KelasSeeder extends Seeder
         $kelas->save();
 
         $kelas = new Kelas();
+        $kelas->name = "1F";
+        $kelas->id_prodi = "24402";
+        $kelas->status=0;
+        $kelas->save();
+
+        $kelas = new Kelas();
         $kelas->name = "2A";
         $kelas->status=0;
         $kelas->id_prodi = 24401;
         $kelas->save();
-
 
         $kelas = new Kelas();
         $kelas->name = "2B";
