@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
 //            });
         $this->call([
             // UsersSeeder::class,
-            // ProgramStudiSeeder::class,
+            ProgramStudiSeeder::class,
             KelasSeeder::class
         ]);
     }
