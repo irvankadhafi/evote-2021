@@ -5,6 +5,7 @@ use App\Models\Contact;
 use App\Models\Organization;
 use App\Models\User;
 use App\Models\ProgramStudi;
+use Database\Seeders\KelasSeeder;
 use Database\Seeders\ProgramStudiSeeder;
 use Database\Seeders\UsersSeeder;
 use Illuminate\Database\Seeder;
@@ -34,8 +35,9 @@ class DatabaseSeeder extends Seeder
 //                $contact->update(['organization_id' => $organizations->random()->id]);
 //            });
         $this->call([
-           UsersSeeder::class,
-            // ProgramStudiSeeder::class,
+            UsersSeeder::class,
+            ProgramStudiSeeder::class,
+            KelasSeeder::class
         ]);
     }
 }

@@ -20,8 +20,6 @@ WORKDIR /var/www
 
 COPY . /var/www
 
-RUN composer install
-
 RUN chown -R www-data:www-data \
         /var/www/storage \
         /var/www/bootstrap/cache
