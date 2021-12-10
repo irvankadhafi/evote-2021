@@ -1,0 +1,97 @@
+<template>
+<!--    <div class="mt-12 md:w-1/2 md:h-full overflow-y-auto" scroll-region>-->
+<!--            <pdf-app pdf="/CV_Cecep.pdf"></pdf-app>-->
+<!--    </div>-->
+  <div class="overflow-y-auto" scroll-region>
+    <div class="mb-5">List Landidat</div>
+    <h1>{{ mahasiswa.nim }} {{ kandidat[0].name }}</h1>
+    <h1>{{ mahasiswa.name }}</h1>
+    <h1>{{ mahasiswa.id_kandidat==null?'0':mahasiswa.id_kandidat }}</h1>
+      <div class="h-screen flex items-center justify-center">
+          <div class="container mx-auto max-w-xs overflow-hidden rounded-lg shadow-lg bg-white" v-for="(data, index) in kandidat">
+              <div class="relative text-center text-white">
+                <!--800x800-->
+                  <img :src="data.foto" class="w-full"/>
+                  <div class="absolute w-full" style="bottom:-2rem">
+                      <div class="mb-10">
+                          <p class="text-lg font-bold tracking-wide text-blue-300">{{data.name}}</p>
+                          <p class="text-sm">ID：12345678</p>
+                      </div>
+                      <button class="w-16 h-16 rounded-full transition ease-in duration-200 focus:outline-none bg-red-600 text-white" @click="toggleModalVisiMisi(index)">
+                          <i class="fa fa-plus"></i>
+                      </button>
+                  </div>
+              </div>
+              <div class="px-4 pt-12 pb-4 tracking-wide flex items-center text-center leading-none text-gray-800 m-auto">
+                  <form @submit.prevent="pilih(mahasiswa.nim,data.id)">
+                      <loading-button :loading="sending" class="btn-green float-left" type="submit">Visi</loading-button>
+                  </form>
+                  <form @submit.prevent="pilih(mahasiswa.nim,data.id)">
+                      <loading-button :loading="sending" class="btn-green float-right" type="submit">Misi</loading-button>
+                  </form>
+              </div>
+          </div>
+      </div>
+    <card-modal :showing="showModal" @close="showModal = false">
+<!--      <h2 class="text-xl font-bold text-gray-900 border-b-2 pb-3">Visi Misi</h2>-->
+<!--      <div class="pb-6 pt-3">-->
+<!--        <p class="pt-3 text-base font-medium text-gray-900">Visi</p>-->
+<!--        <p class="pt-3 text-sm text-gray-800" v-html="kandidat[idKandidat].visi" />-->
+<!--        <p class="pt-3 text-base font-medium text-gray-900">Misi</p>-->
+<!--        <p class="pt-3 text-sm text-gray-80" v-html="kandidat[idKandidat].misi" />-->
+<!--      </div>-->
+      <button
+        class="btn-red float-right"
+        @click="showModal = false"
+      >
+        Close
+      </button>
+    </card-modal>
+  </div>
+</template>
+
+<script>
+import LoadingButton from '../../Shared/LoadingButton'
+import CardModal from '../../Shared/CardModal'
+import PdfApp from "vue-pdf-app";
+export default {
+  name: 'Kandidat',
+  components: {
+    LoadingButton,
+    CardModal,
+      PdfApp
+  },
+  props: {
+    kandidat: Array,
+    mahasiswa: Object,
+    errors: Object,
+  },
+  data(){
+    return{
+      sending: false,
+      showModal : false,
+      idKandidat:0,
+    }
+  },
+    methods:{
+    toggleModalVisiMisi(paramIndex){
+      this.idKandidat = paramIndex
+      this.showModal = !this.showModal
+    },
+    pilih(nim, kandidat){
+      console.log(nim + ' Anda memilih ' + kandidat)
+      const data = new FormData()
+      data.append('nim', nim || '')
+      data.append('kandidat_id', kandidat || '')
+
+      this.$inertia.post(this.route('voting.pilih'), data, {
+        onStart: () => this.sending = true,
+        onFinish: () => this.sending = false,
+      })
+    },
+  },
+}
+</script>
+<style scoped>
+@import url('https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+</style>

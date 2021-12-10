@@ -1,0 +1,29 @@
+import Vue from 'vue'
+import VueMeta from 'vue-meta'
+import PortalVue from 'portal-vue'
+import { App,plugin } from '@inertiajs/inertia-vue'
+
+import { InertiaProgress } from '@inertiajs/progress'
+import Toasted from 'vue-toasted'
+Vue.use(Toasted)
+Vue.config.productionTip = false
+Vue.mixin({ methods: { route: window.route } })
+Vue.use(plugin)
+Vue.use(PortalVue)
+Vue.use(VueMeta)
+window.axios = require('axios')
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+InertiaProgress.init()
+const el = document.getElementById('app')
+
+new Vue({
+  metaInfo: {
+    titleTemplate: (title) => title ? `${title} - E-Vote HMJTK` : 'E-Vote HMJTK',
+  },
+  render: h => h(App, {
+    props: {
+      initialPage: JSON.parse(el.dataset.page),
+      resolveComponent: name => require(`./Pages/${name}`).default,
+    },
+  }),
+}).$mount(el)
