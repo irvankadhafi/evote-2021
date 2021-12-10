@@ -58,6 +58,8 @@ services:
         PMA_USER: kdhf
         PMA_PASSWORD: irvan456
       restart: always
+      networks:
+      - app-network
 networks:
   app-network:
     driver: bridge
