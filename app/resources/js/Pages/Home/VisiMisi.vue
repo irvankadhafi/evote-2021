@@ -8,7 +8,7 @@
         <img src="/img/hmjtk-logo.png" class="w-32 m-auto">
         <h3 class="text-center text-4xl text-gray-900 font-medium leading-8">PEMILU HMJTK POLBAN 2021</h3>
         <div class="text-center text-gray-600 text-xl font-semibold pt-4">
-          <p>Dokumen Visi Misi Kandidat <strong>{{ kandidat.name }}</strong></p>
+          <p>Dokumen Lain Kandidat <strong>{{ kandidat.name }}</strong></p>
         </div>
         <!--        </inertia-link>-->
       </header>

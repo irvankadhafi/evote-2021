@@ -21,8 +21,8 @@
           </div>
         </div>
         <div class="px-4 pt-12 pb-4  flex items-center text-center leading-none text-gray-800">
-          <button class="btn-green m-auto" @click="toggleModalVisiMisi(data.id)">Visi & Misi</button>
-          <inertia-link class="btn-indigo float-right m-auto" as="button" :href="route('cv.kandidat',data.id)">Dokumen CV</inertia-link>
+          <button class="btn-green m-auto" @click="toggleModalVisiMisi(data.id)" v-if="data.id===1">Visi & Misi</button>
+          <inertia-link class="btn-indigo float-right m-auto" as="button" :href="route('cv.kandidat',data.id)" v-if="data.id===1">Dokumen CV</inertia-link>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
         <p class="pt-3 text-base font-medium text-gray-900">Tidak Ada Data</p>
       </div>
       <button class="btn-red float-right" @click="visimisiModal = false">Close</button>
-      <inertia-link class="btn-indigo float-right mx-5" as="button" :href="route('visimisi.kandidat',idKandidat)">Dokumen Visi Misi</inertia-link>
+      <inertia-link class="btn-indigo float-right mx-5" as="button" :href="route('visimisi.kandidat',idKandidat)">Dokumen Lain</inertia-link>
     </card-modal>
   </Layout>
 </template>
