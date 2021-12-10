@@ -24,7 +24,7 @@ services:
     volumes:
       - ./app:/var/www
       - ./nginx/:/etc/nginx/conf.d/
-      - ./ssl/:/etc/nginx/conf.d/
+      - ./ssl/:/etc/ssl/
     networks:
       - app-network
   db:
