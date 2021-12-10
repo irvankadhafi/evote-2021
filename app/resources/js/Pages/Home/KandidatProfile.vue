@@ -21,8 +21,8 @@
           </div>
         </div>
         <div class="px-4 pt-12 pb-4  flex items-center text-center leading-none text-gray-800">
-          <button class="m-auto" :class="(data.id===2)?'btn-gray-500 cursor-not-allowed':'btn-green'" @click="toggleModalVisiMisi(data.id)" :disabled="data.id === 2">Visi & Misi</button>
-          <inertia-link class="float-right m-auto" :class="(data.id===2)?'btn-gray-500 cursor-not-allowed':'btn-indigo'" as="button" :href="route('cv.kandidat',data.id)" :disabled="data.id === 2">Dokumen CV</inertia-link>
+          <button class="m-auto" :class="(data.id===2)?'btn-disable cursor-not-allowed':'btn-green'" @click="toggleModalVisiMisi(data.id)" :disabled="data.id === 2">Visi & Misi</button>
+          <inertia-link class="float-right m-auto" :class="(data.id===2)?'btn-disable cursor-not-allowed':'btn-indigo'" as="button" :href="route('cv.kandidat',data.id)" :disabled="data.id === 2">Dokumen CV</inertia-link>
         </div>
       </div>
     </div>

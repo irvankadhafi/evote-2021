@@ -46,7 +46,7 @@
         <p class="pt-3 text-base font-medium text-gray-900">Tidak Ada Data</p>
       </div>
       <button class="btn-red float-right" @click="visimisiModal = false">Close</button>
-      <inertia-link class="btn-indigo float-right mx-5" as="button" :href="route('visimisi.kandidat',idKandidat)">Dokumen Visi Misi</inertia-link>
+      <inertia-link class="btn-indigo float-right mx-5" as="button" :href="route('visimisi.kandidat',idKandidat)">Dokumen Lain</inertia-link>
     </card-modal>
 
     <!--Modal Konfirmasi Pilih-->

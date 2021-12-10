@@ -139,12 +139,12 @@
               />
               <span>{{ hasil.label[1] }}</span>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
               <span
                 class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
               />
               <span>{{ hasil.label[2] }}</span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -179,7 +179,7 @@
     <div class="flex flex-wrap mt-6 mb-6">
       <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
         <p class="text-xl pb-3 flex items-center">
-          <i class="fas fa-poll mr-3" /> Hasil Voting Angkatan 2021
+          <i class="fas fa-poll mr-3" /> Hasil Voting Tingkat 1
         </p>
         <div class="p-6 bg-white rounded-lg shadow-xs">
           <bar :label="angkatan1.label" :chart-data="angkatan1.jumlah" style="height: 300px;" />
@@ -199,18 +199,18 @@
               />
               <span>{{ hasil.label[1] }}</span>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
               <span
                 class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
               />
               <span>{{ hasil.label[2] }}</span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
         <p class="text-xl pb-3 flex items-center">
-          <i class="fas fa-poll mr-3" /> Hasil Voting Angkatan 2019
+          <i class="fas fa-poll mr-3" /> Hasil Voting Tingkat 2
         </p>
         <div class="p-6 bg-white rounded-lg shadow-xs">
           <bar :label="angkatan2.label" :chart-data="angkatan2.jumlah" style="height: 300px;" />
@@ -230,12 +230,12 @@
               />
               <span>{{ hasil.label[1] }}</span>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
               <span
                 class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
               />
               <span>{{ hasil.label[2] }}</span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -243,7 +243,7 @@
     <div class="flex flex-wrap mt-6 mb-6">
       <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
         <p class="text-xl pb-3 flex items-center">
-          <i class="fas fa-poll mr-3" /> Hasil Voting Angkatan 2018
+          <i class="fas fa-poll mr-3" /> Hasil Voting Tingkat 3
         </p>
         <div class="p-6 bg-white rounded-lg shadow-xs">
           <bar :label="angkatan3.label" :chart-data="angkatan3.jumlah" style="height: 300px;" />
@@ -263,18 +263,18 @@
               />
               <span>{{ hasil.label[1] }}</span>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
               <span
                 class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
               />
               <span>{{ hasil.label[2] }}</span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
         <p class="text-xl pb-3 flex items-center">
-          <i class="fas fa-poll mr-3" /> Hasil Voting Angkatan 2017
+          <i class="fas fa-poll mr-3" /> Hasil Voting Tingkat 4
         </p>
         <div class="p-6 bg-white rounded-lg shadow-xs">
           <bar :label="angkatan4.label" :chart-data="angkatan4.jumlah" style="height: 300px;" />
@@ -294,12 +294,12 @@
               />
               <span>{{ hasil.label[1] }}</span>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
               <span
                 class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
               />
               <span>{{ hasil.label[2] }}</span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

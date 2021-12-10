@@ -19,6 +19,9 @@
     &:hover, &:focus { @apply  bg-red-800 }
 }
 
+.btn-disable{
+    @apply px-6 py-3 rounded bg-gray-500 text-white text-sm font-bold whitespace-no-wrap;
+}
 .btn-spinner,
 .btn-spinner:after {
   border-radius: 50%;
