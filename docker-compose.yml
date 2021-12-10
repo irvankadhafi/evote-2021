@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  app:
+    container_name: hmtjk_app
+    build: ./app
+    volumes:
+      - ./app:/var/www/
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    depends_on:
+      - db
+    environment:
+      - "DB_HOST=db"
+      - "DB_PORT=3306"
+    networks:
+      - app-network
+  nginx:
+    image: nginx:alpine
+    restart: always
+    depends_on:
+      - app
+    ports:
+      - "180:80"
+      - "1443:443"
+    volumes:
+      - ./app:/var/www
+      - ./nginx/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+  db:
+    image: mysql:8.0
+    restart: "always"
+    env_file: ./.env
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: $MYSQLDB_DATABASE
+      MYSQL_USER: $MYSQLDB_USER
+      MYSQL_PASSWORD: $MYSQLDB_PASSWORD
+    ports:
+      - '13306:3306'
+    volumes:
+      - ./volumes/db:/var/lib/mysql
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10k"
+        max-file: "10"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
